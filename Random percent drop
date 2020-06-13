@@ -1,0 +1,46 @@
+import random
+#drops
+normal = 'Torstol seed'
+normal1 = 'Saradomin Brew(4)*30 Super-restore(4)*10'
+normal2 = 'Saradomin Brew(4)*10 Super-restore(4)*10'
+normal3 = 'Necrite Spirit Stone'
+normal4 = 'Onyx Bolts'
+normal5 = 'Dwarf Weed'
+#rare drops
+#pernix
+p1 = 'Pernix cowl'
+p2 = 'Pernix body'
+p3 = 'Pernix chaps'
+p4 = 'Pernix gloves'
+p5 = 'Pernix boots'
+#torva
+p6 = 'Torva full helm'
+p7 = 'Torva platebody'
+p8 = 'Torva platelegs'
+p9 = 'Torva gloves'
+p10 = 'Torva boots'
+#virtus
+p11 = 'Virtus mask'
+p12 = 'Virtus robe top'
+p13 = 'Virtus robe legs'
+p14 = 'Virtus gloves'
+p15 = 'Virtus boots'
+p16 = 'Virtus wand'
+p17 = 'Virtus book'
+p18 = 'Zaryte bow'
+#random list 'pernix torva virtus'
+pernix = random.choices([p1, p2, p3, p4, p5])
+torva = random.choices([p6, p7, p8, p9, p10])
+virtus = random.choices([p11, p12, p13, p14, p15,])
+misc = random.choices([p16, p17, p18])
+drops1 = random.choices([pernix, torva, virtus, misc])
+#random normal and rare drops
+randomdrop = [normal, normal1, normal2, normal3, normal4, normal5, drops1]
+randomprob = [3.0/128, 7.0/128, 29.0/128, 7.0/128, 3.0/128, 3.0/128, 1.0/128]
+drops = random.choices(
+    population=randomdrop,
+    weights=randomprob,
+    k=1
+)
+
+print ('Your drop is: {}'.format(drops))
